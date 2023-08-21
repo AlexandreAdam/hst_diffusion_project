@@ -1,0 +1,5 @@
+torch>=2.0
+torchvision
+h5py
+numpy
+score_models>=0.5.1

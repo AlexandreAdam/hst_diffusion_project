@@ -1,0 +1,7 @@
+{
+    "channels": 1,
+    "nf": 128,
+    "ch_mult": [1, 1, 2, 2, 2],
+    "attention": true,
+    "condition": ["continuous_timelike"]
+}
