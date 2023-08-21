@@ -10,7 +10,7 @@ class Dataset(torch.utils.data.Dataset):
     def __init__(self, path, channels=2, condition_on_z=False, condition_on_sed=False, condition_on_mag=False):
         self.file = h5py.File(path)
         self.len = len(self.file["hudf_resized"])
-        self.channels = channel
+        self.channels = channels
         self.condition_on_z = condition_on_z
         self.condition_on_mag = condition_on_mag
         self.condition_on_sed = condition_on_sed

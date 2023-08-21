@@ -3,6 +3,6 @@
     "nf": 128,
     "ch_mult": [1, 1, 2, 2, 2],
     "attention": true,
-    "condition": ["descrete_timelike"],
+    "condition": ["discrete_timelike"],
     "condition_num_embedding": 101
 }
