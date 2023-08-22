@@ -12,7 +12,7 @@ source $HOME/environments/milex/bin/activate
 python $HOME/scratch/hst_diffusion_project/train_score.py\
     --dataset_path=$HOME/scratch/hst_diffusion_project/data/hudf_dataset.h5\
     --channels 3\
-    --parameter_path=$HOME/scratch/hst_diffusion_project/architectures/unconditional_ncsnnpp.json\
+    --parameter_path=$HOME/scratch/hst_diffusion_project/architectures/unconditional_ncsnpp.json\
     --checkpoints_directory=$HOME/scratch/hst_diffusion_project/ncsnpp_hst_z_unconditional\
     --batch_size=4\
     --epochs=10000\
