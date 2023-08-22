@@ -10,7 +10,7 @@
 
 source $HOME/environments/caustic/bin/activate
 python $HOME/scratch/hst_diffusion_project/train_score.py\
-    --dataset_path=$HOME/scratch/hst_diffusion_project/data/\
+    --dataset_path=$HOME/scratch/hst_diffusion_project/data/hudf_dataset.h5\
     --channels 0\
     --parameter_path=$HOME/scratch/hst_diffusion_project/architectures/unconditional_ncsnnpp.json\
     --checkpoints_directory=$HOME/scratch/hst_diffusion_project/ncsnpp_hst_b_unconditional\
