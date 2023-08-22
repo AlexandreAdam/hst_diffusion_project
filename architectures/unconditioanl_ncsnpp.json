@@ -2,5 +2,8 @@
     "channels": 1,
     "nf": 128,
     "ch_mult": [1, 1, 2, 2, 2],
-    "attention": true
+    "attention": true,
+    "beta_min": 1e-2,
+    "beta_max": 20,
+    "epsilon": 1e-5
 }

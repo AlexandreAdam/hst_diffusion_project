@@ -61,7 +61,7 @@ if __name__ == "__main__":
     parser = ArgumentParser()
     
     parser.add_argument("--dataset_path", required=True, help="Path to the h5 dataset")
-    parser.add_argument("--channels", default=2, nargs="+" type=int, help="Channels to train the model on. Multiple channel can be provided")
+    parser.add_argument("--channels", default=2, nargs="+", type=int, help="Channels to train the model on. Multiple channel can be provided")
     parser.add_argument("--parameter_path", required=True, help="Path to the model json hyperparameter file")
     parser.add_argument("--checkpoints_directory", required=True, help="Path to the folder where to save the model, created if it does not exist.")
     

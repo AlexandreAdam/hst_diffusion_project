@@ -3,5 +3,8 @@
     "nf": 128,
     "ch_mult": [1, 1, 2, 2, 2],
     "attention": true,
-    "condition": ["continuous_timelike"]
+    "condition": ["continuous_timelike"],
+    "beta_min": 1e-2,
+    "beta_max": 20,
+    "epsilon": 1e-5
 }

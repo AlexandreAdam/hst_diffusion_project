@@ -4,5 +4,8 @@
     "ch_mult": [1, 1, 2, 2, 2],
     "attention": true,
     "condition": ["continuous_timelike", "discrete_timelike"],
-    "condition_num_embedding": [101]
+    "condition_num_embedding": [101],
+    "beta_min": 1e-2,
+    "beta_max": 20,
+    "epsilon": 1e-5
 }
