@@ -8,7 +8,7 @@
 #SBATCH --job-name=TrainHST_z
 #SBATCH --output=%x-%j.out
 
-source $HOME/environments/caustic/bin/activate
+source $HOME/environments/milex/bin/activate
 python $HOME/scratch/hst_diffusion_project/train_score.py\
     --dataset_path=$HOME/scratch/hst_diffusion_project/data/hudf_dataset.h5\
     --channels 3\
