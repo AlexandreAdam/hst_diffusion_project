@@ -26,7 +26,7 @@ class Dataset(torch.utils.data.Dataset):
         if self.conditioned_on_z:
             z = torch.tensor(self.file["hudf_z"][index].astype(np.float32)).to(DEVICE)
             args.append(z)
-        if self.condition_on_sed
+        if self.condition_on_sed:
             sed = torch.tensor(self.file["hudf_template"][index].astype(np.float32)).to(DEVICE)
             args.append(sed)
         return image, *args
