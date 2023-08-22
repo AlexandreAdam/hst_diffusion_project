@@ -1,5 +1,6 @@
 from score_models import NCSNpp, ScoreModel
 from torchvision import transforms as T
+import numpy as np
 import torch
 import json
 import h5py
