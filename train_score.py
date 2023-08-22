@@ -29,7 +29,7 @@ class Dataset(torch.utils.data.Dataset):
         if self.condition_on_sed:
             sed = torch.tensor(self.file["hudf_template"][index].astype(np.float32)).to(DEVICE)
             args.append(sed)
-        return image, *args
+        return [image] + args
             
 
 def main(args):
