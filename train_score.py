@@ -1,5 +1,5 @@
 from score_models import NCSNpp, ScoreModel
-from torchvision improt transforms as T
+from torchvision import transforms as T
 import torch
 import json
 import h5py
@@ -19,7 +19,7 @@ class Dataset(torch.utils.data.Dataset):
         return self.len
     
     def __getitem__(self, index):
-        image = torch.tensor(self.file["hudf_resized"][index, self.channel].astype(np.float32)).to(DEVICE)
+        image = torch.tensor(self.file["hudf_resized"][index, self.channels].astype(np.float32)).to(DEVICE)
         if image.ndim == 2:
             image = image[None]
         args = []
@@ -27,7 +27,7 @@ class Dataset(torch.utils.data.Dataset):
             z = torch.tensor(self.file["hudf_z"][index].astype(np.float32)).to(DEVICE)
             args.append(z)
         if self.condition_on_sed
-            sed = torch.tensor(self.file["hudf_template"][index, self.channel].astype(np.float32)).to(DEVICE)
+            sed = torch.tensor(self.file["hudf_template"][index].astype(np.float32)).to(DEVICE)
             args.append(sed)
         return image, *args
             
@@ -52,7 +52,7 @@ def main(args):
             preprocessing_fn=preprocessing,
             epochs=args.epochs,
             batch_size=args.batch_size,
-            checkpoints_directory=args.checkpoints_directory
+            checkpoints_directory=args.checkpoints_directory,
             learning_rate=args.learning_rate
             )
 
