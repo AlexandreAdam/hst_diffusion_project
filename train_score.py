@@ -73,4 +73,4 @@ if __name__ == "__main__":
     parser.add_argument("--condition_on_z", action="store_true")
     parser.add_argument("--condition_on_sed", action="store_true")
     args = parser.parse_args()
-    main()
+    main(args)
