@@ -24,7 +24,7 @@ class Dataset(torch.utils.data.Dataset):
         if image.ndim == 2:
             image = image[None]
         args = []
-        if self.conditioned_on_z:
+        if self.condition_on_z:
             z = torch.tensor(self.file["hudf_z"][index].astype(np.float32)).to(DEVICE)
             args.append(z)
         if self.condition_on_sed:
