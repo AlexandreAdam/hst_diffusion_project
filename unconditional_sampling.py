@@ -22,7 +22,7 @@ def main(args):
     with h5py.File(os.path.join(args.output_directory, args.name_prefix + f"_{THIS_WORKER}.h5"), "w") as hf:
         hf.create_dataset("images", [N//N_WORKERS, args.channels, args.pixels, args.pixels], dtype=np.float32)
         for b in range(N // N_WORKERS // B):
-            samples = model.sample(shape=[B, args.channels, args.pxiels, args.pixels], steps=args.em_steps)
+            samples = model.sample(shape=[B, args.channels, args.pixels, args.pixels], steps=args.em_steps)
             hf["images"][b*B: (b+1)*B] = samples.cpu().numpy().astype(np.float32)
 
 if __name__ == "__main__":
