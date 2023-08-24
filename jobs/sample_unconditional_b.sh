@@ -13,7 +13,7 @@ base_dir=$HOME/scratch/hst_diffusion_project
 
 source $HOME/environments/milex/bin/activate
 python $base_dir/unconditional_sampling.py\
-    --checkpoints_directory=$base_dir/ncsnpp_hst_unconditional_b\
+    --checkpoints_directory=$base_dir/ncsnpp_hst_b_unconditional\
     --batch_size=10\
     --output_directory=$base_dir/samples/\
     --name_prefix=samples_unconditional_b\
