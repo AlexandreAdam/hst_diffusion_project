@@ -43,7 +43,7 @@ def main(args):
         ])
     def preprocessing(image):
         image = transformation_sequence(image)
-        return image
+        return image * args.preprocessing_constant
     
     net = NCSNpp(**hp)
     model = ScoreModel(net, **hp)
@@ -65,6 +65,7 @@ if __name__ == "__main__":
     parser.add_argument("--channels", default=2, nargs="+", type=int, help="Channels to train the model on. Multiple channel can be provided")
     parser.add_argument("--parameter_path", required=True, help="Path to the model json hyperparameter file")
     parser.add_argument("--checkpoints_directory", required=True, help="Path to the folder where to save the model, created if it does not exist.")
+    parser.add_argument("--preprocessing_constant", default=1000, type=float, help="Rescale the units of the images by this constant to improve stability of network")
     
     parser.add_argument("--learning_rate", default=1e-4, type=float)
     parser.add_argument("--epochs", default=1000, type=int)
