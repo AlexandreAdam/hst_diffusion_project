@@ -4,7 +4,7 @@
 #SBATCH --cpus-per-task=1 # maximum cpu per task is 3.5 per gpus
 #SBATCH --gres=gpu:1
 #SBATCH --mem=32G                        # memory per node
-#SBATCH --time=00-05:00         # time (DD-HH:MM)
+#SBATCH --time=00-10:00         # time (DD-HH:MM)
 #SBATCH --account=rrg-lplevass
 #SBATCH --job-name=Sample_uncond_i
 #SBATCH --output=%x-%j.out
@@ -18,5 +18,5 @@ python $base_dir/unconditional_sampling.py\
     --output_directory=$base_dir/samples/\
     --name_prefix=samples_unconditional_i\
     --total=10000\
-    --em_steps=1000\
+    --em_steps=2000\
 
