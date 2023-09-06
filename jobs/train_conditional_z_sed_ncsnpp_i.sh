@@ -13,7 +13,7 @@ python $HOME/scratch/hst_diffusion_project/train_score.py\
     --dataset_path=$HOME/scratch/hst_diffusion_project/data/hudf_dataset.h5\
     --channels 2\
     --parameter_path=$HOME/scratch/hst_diffusion_project/architectures/conditional_z_and_sed_ncsnpp.json\
-    --checkpoint_directory=$HOME/scratch/hst_diffusion_project/ncsnpp_hst_conditional_z\
+    --checkpoint_directory=$HOME/scratch/hst_diffusion_project/ncsnpp_hst_conditional_z_and_sed\
     --batch_size=4\
     --epochs=10000\
     --max_time=70\
