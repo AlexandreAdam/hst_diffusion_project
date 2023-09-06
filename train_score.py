@@ -15,6 +15,8 @@ class Dataset(torch.utils.data.Dataset):
         self.condition_on_z = condition_on_z
         self.condition_on_mag = condition_on_mag
         self.condition_on_sed = condition_on_sed
+        bins = np.arange(101) / 10 + 1
+        self.tokenize = lambda sed: np.digitize(sed, bins)
 
     def __len__(self):
         return self.len
@@ -28,7 +30,7 @@ class Dataset(torch.utils.data.Dataset):
             z = torch.tensor(self.file["hudf_z"][index].astype(np.float32)).to(DEVICE)
             args.append(z)
         if self.condition_on_sed:
-            sed = torch.tensor(self.file["hudf_template"][index].astype(np.float32)).to(DEVICE)
+            sed = torch.tensor(self.tokenize(self.file["hudf_template"][index])).long().to(DEVICE)
             args.append(sed)
         return [image] + args
             
