@@ -15,7 +15,7 @@ class Dataset(torch.utils.data.Dataset):
         self.condition_on_z = condition_on_z
         self.condition_on_sed = condition_on_sed
         bins = np.arange(101) / 10 + 1
-        self.tokenize = lambda sed: np.digitize(sed, bins)
+        self.tokenize = lambda sed: np.digitize(sed, bins) - 1
 
     def __len__(self):
         return self.len

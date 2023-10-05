@@ -21,7 +21,7 @@ def main(args):
     
     # First, construct empirical distributions for sed and z based on dataset
     bins = np.arange(101) / 10 + 1
-    tokenize = lambda sed: np.digitize(sed, bins)
+    tokenize = lambda sed: np.digitize(sed, bins) - 1
     seds, sed_counts = np.unique(hf["hudf_template"][:], return_counts=True)
     sed_p = sed_counts / sed_counts.sum()
     sed_dist = lambda n: torch.tensor(tokenize(np.random.choice(seds, p=sed_p, size=n))).long().to(DEVICE)
