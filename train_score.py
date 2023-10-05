@@ -56,7 +56,8 @@ def main(args):
             epochs=args.epochs,
             batch_size=args.batch_size,
             checkpoints_directory=args.checkpoints_directory,
-            learning_rate=args.learning_rate
+            learning_rate=args.learning_rate,
+            max_time=args.max_time
             )
 
 if __name__ == "__main__":
