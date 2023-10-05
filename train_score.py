@@ -49,7 +49,7 @@ def main(args):
     
     net = NCSNpp(**hp)
     model = ScoreModel(net, **hp)
-    dataset = Dataset(args.dataset_path, args.channels)
+    dataset = Dataset(args.dataset_path, args.channels, condition_on_z=args.condition_on_z, condition_on_sed=args.condition_on_sed, condition_on_mag=args.condition_on_mag)
     model.fit(
             dataset,
             preprocessing_fn=preprocessing,
